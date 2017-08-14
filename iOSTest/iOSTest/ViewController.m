@@ -9,6 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController () <AVCaptureAudioDataOutputSampleBufferDelegate>
+{
+    NSInteger count;
+}
 
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *layer;
 
@@ -32,9 +35,9 @@
     self.sessionView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.sessionView];
     
-    self.faceView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a"]];
-    self.faceView.frame = CGRectZero;
-    [self.view addSubview:self.faceView];
+//    self.faceView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"a"]];
+//    self.faceView.frame = CGRectZero;
+//    [self.view addSubview:self.faceView];
     
     self.leftEyeView = [[UIView alloc] init];
     self.leftEyeView.alpha = 0.4;
@@ -105,6 +108,13 @@
 #pragma mark - AVCaptureAudioDataOutputSampleBufferDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
 //    printf("%s\n", __func__);
+    
+    count++;
+    if (count < 30) {
+        return;
+    }
+    count = 0;
+    
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CIImage *image = [[CIImage alloc] initWithCVImageBuffer:imageBuffer];
     
