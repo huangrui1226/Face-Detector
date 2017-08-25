@@ -102,6 +102,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:qrCode.messageString message:nil preferredStyle:UIAlertControllerStyleAlert];
             [alertVC addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertVC animated:YES completion:nil];
         });
     }
 }
