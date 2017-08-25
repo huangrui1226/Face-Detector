@@ -107,7 +107,6 @@
 #pragma mark - Delegate
 #pragma mark - AVCaptureAudioDataOutputSampleBufferDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-//    printf("%s\n", __func__);
     
     count++;
     if (count < 32) {

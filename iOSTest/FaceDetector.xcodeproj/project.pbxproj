@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D96EF01F502D0C0055CAF0 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D96EEF1F502D0C0055CAF0 /* QRCodeViewController.m */; };
 		04E8D0B91EEA5D82004C46A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D0B81EEA5D82004C46A3 /* AppDelegate.m */; };
 		04E8D0BC1EEA5D82004C46A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D0BB1EEA5D82004C46A3 /* ViewController.m */; };
 		04E8D0BF1EEA5D82004C46A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E8D0BD1EEA5D82004C46A3 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D96EEE1F502D0C0055CAF0 /* QRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		04D96EEF1F502D0C0055CAF0 /* QRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		04E8D0B41EEA5D82004C46A3 /* FaceDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E8D0B71EEA5D82004C46A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04E8D0B81EEA5D82004C46A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				04E8D0C61EEA5D82004C46A3 /* main.m */,
 				04E8D0CD1EEA5DB2004C46A3 /* UIAlertAction+Hook.h */,
 				04E8D0CE1EEA5DB2004C46A3 /* UIAlertAction+Hook.m */,
+				04D96EEE1F502D0C0055CAF0 /* QRCodeViewController.h */,
+				04D96EEF1F502D0C0055CAF0 /* QRCodeViewController.m */,
 			);
 			path = iOSTest;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D96EF01F502D0C0055CAF0 /* QRCodeViewController.m in Sources */,
 				04E8D0BC1EEA5D82004C46A3 /* ViewController.m in Sources */,
 				04E8D0C71EEA5D82004C46A3 /* main.m in Sources */,
 				04E8D0B91EEA5D82004C46A3 /* AppDelegate.m in Sources */,
