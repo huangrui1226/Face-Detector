@@ -55,7 +55,9 @@
     [self.view addSubview:self.mouthView];
 
     self.context = [CIContext context];
-    self.detector = [CIDetector detectorOfType:CIDetectorTypeFace context:self.context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    self.detector = [CIDetector detectorOfType:CIDetectorTypeFace context:self.context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh,
+                                                                                                 CIDetectorTracking:@(YES),
+                                                                                                 }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -108,12 +110,6 @@
 #pragma mark - AVCaptureAudioDataOutputSampleBufferDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     
-    count++;
-    if (count < 32) {
-        return;
-    }
-    count = 0;
-    
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CIImage *image = [[CIImage alloc] initWithCVImageBuffer:imageBuffer];
     
@@ -122,18 +118,17 @@
     
     CIFeature *feature = [[self.detector featuresInImage:image] lastObject];
     if (feature) {
-        if (self.leftEyeView.frame.size.width == 0) {
-            self.leftEyeView.frame = CGRectMake(0, 0, 20, 20);
-        }
-        if (self.rightEyeView.frame.size.width == 0) {
-            self.rightEyeView.frame = CGRectMake(0, 0, 20, 20);
-        }
-        if (self.mouthView.frame.size.width == 0) {
-            self.mouthView.frame = CGRectMake(0, 0, 20, 20);
-        }
-        NSLog(@"find");
-        CIFaceFeature *face = (CIFaceFeature *)feature;
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.leftEyeView.frame.size.width == 0) {
+                self.leftEyeView.frame = CGRectMake(0, 0, 20, 20);
+            }
+            if (self.rightEyeView.frame.size.width == 0) {
+                self.rightEyeView.frame = CGRectMake(0, 0, 20, 20);
+            }
+            if (self.mouthView.frame.size.width == 0) {
+                self.mouthView.frame = CGRectMake(0, 0, 20, 20);
+            }
+            CIFaceFeature *face = (CIFaceFeature *)feature;
             self.faceView.frame = CGRectMake(face.bounds.origin.y / imageW * self.sessionView.frame.size.height,
                                              face.bounds.origin.x / imageH * self.sessionView.frame.size.width,
                                              face.bounds.size.width / imageH * self.sessionView.frame.size.width,

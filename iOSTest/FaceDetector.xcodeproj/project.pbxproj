@@ -14,7 +14,6 @@
 		04E8D0C11EEA5D82004C46A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E8D0C01EEA5D82004C46A3 /* Assets.xcassets */; };
 		04E8D0C41EEA5D82004C46A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E8D0C21EEA5D82004C46A3 /* LaunchScreen.storyboard */; };
 		04E8D0C71EEA5D82004C46A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D0C61EEA5D82004C46A3 /* main.m */; };
-		04E8D0CF1EEA5DB2004C46A3 /* UIAlertAction+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8D0CE1EEA5DB2004C46A3 /* UIAlertAction+Hook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +29,6 @@
 		04E8D0C31EEA5D82004C46A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E8D0C51EEA5D82004C46A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E8D0C61EEA5D82004C46A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		04E8D0CD1EEA5DB2004C46A3 /* UIAlertAction+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Hook.h"; sourceTree = "<group>"; };
-		04E8D0CE1EEA5DB2004C46A3 /* UIAlertAction+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Hook.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +70,6 @@
 				04E8D0C21EEA5D82004C46A3 /* LaunchScreen.storyboard */,
 				04E8D0C51EEA5D82004C46A3 /* Info.plist */,
 				04E8D0C61EEA5D82004C46A3 /* main.m */,
-				04E8D0CD1EEA5DB2004C46A3 /* UIAlertAction+Hook.h */,
-				04E8D0CE1EEA5DB2004C46A3 /* UIAlertAction+Hook.m */,
 				04D96EEE1F502D0C0055CAF0 /* QRCodeViewController.h */,
 				04D96EEF1F502D0C0055CAF0 /* QRCodeViewController.m */,
 			);
@@ -107,7 +102,7 @@
 		04E8D0AC1EEA5D82004C46A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = CoderHuang;
 				TargetAttributes = {
 					04E8D0B31EEA5D82004C46A3 = {
@@ -155,7 +150,6 @@
 				04E8D0BC1EEA5D82004C46A3 /* ViewController.m in Sources */,
 				04E8D0C71EEA5D82004C46A3 /* main.m in Sources */,
 				04E8D0B91EEA5D82004C46A3 /* AppDelegate.m in Sources */,
-				04E8D0CF1EEA5DB2004C46A3 /* UIAlertAction+Hook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +195,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -254,6 +250,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;

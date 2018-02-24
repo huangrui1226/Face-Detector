@@ -32,7 +32,8 @@
     [self.view addSubview:self.sessionView];
     
     self.context = [CIContext context];
-    self.detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:self.context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    self.detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:self.context options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh,
+                                                                                                   }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -85,12 +86,6 @@
 #pragma mark - Delegate
 #pragma mark - AVCaptureAudioDataOutputSampleBufferDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-    
-    count++;
-    if (count < 32) {
-        return;
-    }
-    count = 0;
     
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     CIImage *image = [[CIImage alloc] initWithCVImageBuffer:imageBuffer];
